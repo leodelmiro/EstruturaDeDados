@@ -2,7 +2,7 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class BubbleSortTest {
+public class SelectionSortTest {
     int[] array;
     char[] arrayChar;
 
@@ -16,8 +16,8 @@ public class BubbleSortTest {
     public void testSort() {
         int[] expected = new int[]{1, 2, 3, 4, 5};
         char[] expectedChar = new char[]{'a', 'b', 'c', 'd', 'e'};
-        BubbleSort.bubbleSort(array);
-        BubbleSort.bubbleSort(arrayChar);
+        SelectionSort.selectionSort(array);
+        SelectionSort.selectionSort(arrayChar);
         assertArrayEquals(expected, array);
         assertArrayEquals(expectedChar, arrayChar);
     }

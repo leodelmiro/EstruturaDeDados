@@ -1,24 +1,15 @@
 public class InsertionSort {
 
-    public static void insertionSort(int[] array) {
-        int j;
+    //InsertionSort Complexity - O(n²)
+    public static <T extends Comparable<T>> void insertionSort(T[] array) {
         for (int i = 1; i < array.length; i++){
-            int aux = array[i];
-            for (j = i-1; j>=0 && aux < array[j]; j--){
+            int j = i-1;
+            T elementSelected = array[i];
+            while (j >= 0 && array[j].compareTo(elementSelected) > 0){
                 array[j+1] = array[j];
+                j--;
             }
-            array[j+1] = aux;
-        }
-    }
-
-    public static void insertionSort(char[] array) {
-        int j;
-        for (int i = 1; i < array.length; i++){
-            char aux = array[i];
-            for (j = i-1; j>=0 && aux < array[j]; j--){
-                array[j+1] = array[j];
-            }
-            array[j+1] = aux;
+            array[j+1] = elementSelected;
         }
     }
 }
